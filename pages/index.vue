@@ -1,60 +1,109 @@
 <template>
-  <div class="container">
-    <!-- <Logo /> -->
-    <Header />
-    <!-- <nuxt-link to="/user">user</nuxt-link>
-    <nuxt-link to="/products/1">products1</nuxt-link>
-    <nuxt-link to="/products/2">products2</nuxt-link>
-    <button @click="toProducts">button</button>-->
+  <div class="home-page">
+    <section class="intro">
+      <h1>獲取最新技術資訊</h1>
+    </section>
+    <section class="featured-posts">
+      <PostPreview />
+      <nuxt-link :to="'posts/'+2" class="post-preview">
+        <article>
+          <div
+            class="post-thumbnail"
+            style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSVd5uMdlDzg1O8Ku_IYOq7TmKQ8DSof0q4Kg&usqp=CAU)"
+          ></div>
+          <div class="post-content">
+            <h1>文章標題2</h1>
+            <p>預覽文章2</p>
+          </div>
+        </article>
+      </nuxt-link>
+    </section>
   </div>
 </template>
 
 <script>
-import Logo from "~/components/Logo.vue";
-import Header from "../components/header";
+import PostPreview from "../components/Posts/PostPreview";
 
 export default {
   components: {
-    Logo,
-    Header,
-  },
-  methods: {
-    toProducts() {
-      this.$router.push("/products");
-    },
+    PostPreview,
   },
 };
 </script>
 
-<style>
-/* .container {
-  margin: 0 auto;
-  min-height: 100vh;
+<style scoped>
+.intro {
+  height: 300px;
+  position: relative;
+  padding: 30px;
+  box-sizing: border-box;
+  background-position: center;
+  background-size: cover;
+}
+
+.intro h1 {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 90%;
+  font-size: 1.5rem;
+  color: black;
+  background-color: rgb(211, 211, 211);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px black;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
+@media (min-width: 768px) {
+  .intro h1 {
+    font-size: 2rem;
+  }
+}
+
+.featured-posts {
   display: flex;
-  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
+}
+
+.post-preview {
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 2px #ccc;
+  background-color: white;
+  width: 90%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+@media (min-width: 850px) {
+  .post-preview {
+    width: 400px;
+    margin: 10px;
+  }
+}
+
+.post-thumbnail {
+  width: 100%;
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+}
+
+.post-content {
+  padding: 10px;
   text-align: center;
 }
 
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+a:hover .post-content,
+a:active .post-content {
+  background-color: #ccc;
 }
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-} */
 </style>
