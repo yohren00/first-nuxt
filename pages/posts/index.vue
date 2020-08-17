@@ -1,9 +1,11 @@
 <template>
-  <div class="posts-page"></div>
+  <div class="posts-page">
+    <h1>posts page</h1>
+  </div>
 </template>
 
 <style scoped>
-.posts-page{
+.posts-page {
   display: flex;
   justify-content: center;
   align-items: center;

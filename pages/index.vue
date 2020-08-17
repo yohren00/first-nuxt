@@ -10,9 +10,19 @@
         title="YOO!"
         previewText="第一篇文章"
       />
-      <PostPreview />
-      <PostPreview />
-    </section>·
+      <PostPreview
+        id="2"
+        thumbnail="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTwQyAEDXUKgJ9JCNhfuCXnQbopPANbquVcPw&usqp=CAU"
+        title="YOO!"
+        previewText="第二篇文章"
+      />
+      <PostPreview
+        id="3"
+        thumbnail="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTwQyAEDXUKgJ9JCNhfuCXnQbopPANbquVcPw&usqp=CAU"
+        title="YOO!"
+        previewText="第三篇文章"
+      />
+    </section>
   </div>
 </template>
 
@@ -32,6 +42,7 @@ export default {
   position: relative;
   padding: 30px;
   box-sizing: border-box;
+  background-image: url("../assets/images/1_18D2nMBUOE70LvsSRPiWBw.png");
   background-position: center;
   background-size: cover;
 }
