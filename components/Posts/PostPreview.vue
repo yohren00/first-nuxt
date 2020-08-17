@@ -1,17 +1,38 @@
 <template>
-  <nuxt-link :to="'posts/'+1" class="post-preview">
+  <nuxt-link :to="'posts/'+id" class="post-preview">
     <article>
-      <div
-        class="post-thumbnail"
-        style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTwXaUz8TTfLGjTdzot9IZy-vTmk2THj2eYCw&usqp=CAU)"
-      ></div>
+      <div class="post-thumbnail" :style="{backgroundimage: 'url('+thumbnail+')'}"></div>
       <div class="post-content">
-        <h1>文章標題</h1>
-        <p>預覽文章</p>
+        <h1>{{title}}</h1>
+        <p>{{previewText}}</p>
       </div>
     </article>
   </nuxt-link>
 </template>
+
+<script>
+export default {
+  name: "PostPreview",
+  props: {
+    id: {
+      type: String,
+      required: true,
+    },
+    title: {
+      type: String,
+      required: true,
+    },
+    previewText: {
+      type: String,
+      required: true,
+    },
+    thumbnail: {
+      type: String,
+      required: true,
+    },
+  },
+};
+</script>
 
 <style scoped>
 .post-preview {

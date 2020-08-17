@@ -4,20 +4,15 @@
       <h1>獲取最新技術資訊</h1>
     </section>
     <section class="featured-posts">
+      <PostPreview
+        id="1"
+        thumbnail="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTwQyAEDXUKgJ9JCNhfuCXnQbopPANbquVcPw&usqp=CAU"
+        title="YOO!"
+        previewText="第一篇文章"
+      />
       <PostPreview />
-      <nuxt-link :to="'posts/'+2" class="post-preview">
-        <article>
-          <div
-            class="post-thumbnail"
-            style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSVd5uMdlDzg1O8Ku_IYOq7TmKQ8DSof0q4Kg&usqp=CAU)"
-          ></div>
-          <div class="post-content">
-            <h1>文章標題2</h1>
-            <p>預覽文章2</p>
-          </div>
-        </article>
-      </nuxt-link>
-    </section>
+      <PostPreview />
+    </section>·
   </div>
 </template>
 
