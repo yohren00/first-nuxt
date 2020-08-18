@@ -1,8 +1,18 @@
 <template>
   <div class="posts-page">
-    <h1>posts page</h1>
+    <PostList />
   </div>
 </template>
+
+<script>
+import PostList from "../../components/Posts/PostList";
+
+export default {
+  components: {
+    PostList,
+  },
+};
+</script>
 
 <style scoped>
 .posts-page {
