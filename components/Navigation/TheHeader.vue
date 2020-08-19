@@ -1,7 +1,7 @@
 <template>
   <div class="header-container">
     <header class="the-header">
-      <TheSideNavToggle @toggle="$emit('sidenavToggle')" />
+      <TheSideNavToggle @toggle="$emit('sidenavtoggle')" />
       <div class="logo">
         <nuxt-link to="/">LEN BLOG</nuxt-link>
       </div>

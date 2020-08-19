@@ -10,7 +10,7 @@
     </section>
     <secton>
       <p class="post-feedback">
-        問題回報，信箱
+        讓我知道您對於這篇文章的看法，請寄信到
         <a href="mailto:yohren00@gmail.com">yohren00@gmail.com</a>
       </p>
     </secton>

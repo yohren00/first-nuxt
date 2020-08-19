@@ -4,8 +4,8 @@
       <button @click="$router.push('/admin/new-post')">新增文章</button>
     </section>
     <section class="existing-posts">
-      <h1>現有文章</h1>
-      <ProstList />
+      <h1>編輯文章</h1>
+      <ProstList isAdmin />
     </section>
   </div>
 </template>
