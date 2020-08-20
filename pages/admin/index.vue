@@ -1,8 +1,8 @@
 <template>
   <div class="admin-page">
     <section class="new-post">
-      <button @click="$router.push('/admin/new-post')">新增文章</button>
-    </section>
+      <AppButton @click="$router.push('/admin/new-post')">新增文章</AppButton>
+    </section>
     <section class="existing-posts">
       <h1>編輯文章</h1>
       <ProstList isAdmin />
@@ -11,11 +11,14 @@
 </template>
 
 <script>
-import ProstList from "../../components/Posts/PostList";
+import ProstList from "@/components/Posts/PostList";
+import AppButton from "@/components/UI/AppButton";
 
 export default {
+  layout: "admin",
   components: {
     ProstList,
+    AppButton,
   },
 };
 </script>

@@ -3,35 +3,29 @@
     <section class="intro">
       <h1>獲取最新技術資訊</h1>
     </section>
-    <section class="featured-posts">
-      <PostPreview
-        id="1"
-        thumbnail="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTwQyAEDXUKgJ9JCNhfuCXnQbopPANbquVcPw&usqp=CAU"
-        title="YOO!"
-        previewText="第一篇文章"
-      />
-      <PostPreview
-        id="2"
-        thumbnail="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTwQyAEDXUKgJ9JCNhfuCXnQbopPANbquVcPw&usqp=CAU"
-        title="YOO!"
-        previewText="第二篇文章"
-      />
-      <PostPreview
-        id="3"
-        thumbnail="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTwQyAEDXUKgJ9JCNhfuCXnQbopPANbquVcPw&usqp=CAU"
-        title="YOO!"
-        previewText="第三篇文章"
-      />
-    </section>
+    <PostList :posts="loadedPosts" />
   </div>
 </template>
 
 <script>
-import PostPreview from "../components/Posts/PostPreview";
+import PostList from "../components/Posts/PostList";
 
 export default {
   components: {
-    PostPreview,
+    PostList,
+  },
+  data() {
+    return {
+      loadedPosts: [
+        {
+          id: "1",
+          thumbnail:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTwQyAEDXUKgJ9JCNhfuCXnQbopPANbquVcPw&usqp=CAU",
+          title: "第一篇文章",
+          previewText: "這條路真的不好走....",
+        },
+      ],
+    };
   },
 };
 </script>
@@ -67,49 +61,3 @@ export default {
     font-size: 2rem;
   }
 }
-
-.featured-posts {
-  display: flex;
-  padding: 20px;
-  box-sizing: border-box;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
-
-.post-preview {
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 2px #ccc;
-  background-color: white;
-  width: 90%;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-@media (min-width: 850px) {
-  .post-preview {
-    width: 400px;
-    margin: 10px;
-  }
-}
-
-.post-thumbnail {
-  width: 100%;
-  height: 200px;
-  background-position: center;
-  background-size: cover;
-}
-
-.post-content {
-  padding: 10px;
-  text-align: center;
-}
-
-a:hover .post-content,
-a:active .post-content {
-  background-color: #ccc;
-}
-</style>
