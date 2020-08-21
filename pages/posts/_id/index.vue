@@ -1,21 +1,40 @@
 <template>
   <div class="single-post-page">
     <section class="posts">
-      <h1 class="post-title">文章標題</h1>
+      <h1 class="post-title">{{loadedPost.title}}</h1>
       <div class="post-details">
-        <div class="post-detail">最後更新日期：</div>
-        <div class="post-detail">發文人：</div>
+        <div class="post-detail">最後更新日期：{{loadedPost.date}}</div>
+        <div class="post-detail">發文人：{{loadedPost.author}}</div>
       </div>
-      <p class="post-content">文章內容</p>
+      <p class="post-content">{{loadedPost.content}}</p>
     </section>
     <secton>
       <p class="post-feedback">
         讓我知道您對於這篇文章的看法，請寄信到
-        <a href="mailto:yohren00@gmail.com">yohren00@gmail.com</a>
+        <a href="mailto:feake@gmail.com">feake@gmail.com</a>
       </p>
     </secton>
   </div>
 </template>
+
+<script>
+export default {
+  async asyncData(context) {
+    console.log("posts_id", context);
+    await new Promise((resolve, reject) => setTimeout(() => resolve(), 1000));
+    return {
+      loadedPost: {
+        id: "1",
+        title: "第一篇文章(ID:" + context.route.params.id + ")",
+        date: new Date(),
+        content: "不是很懂context用法，這邊是連接context，之後需要再了解。",
+        author: "Len",
+      },
+    };
+  },
+};
+</script>
+
 
 <style scoped>
 .single-post-page {

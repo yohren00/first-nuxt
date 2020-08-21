@@ -1,7 +1,7 @@
 <template>
   <div class="home-page">
     <section class="intro">
-      <h1>獲取最新技術資訊</h1>
+      <h1>工程師之路</h1>
     </section>
     <PostList :posts="loadedPosts" />
   </div>
@@ -14,7 +14,9 @@ export default {
   components: {
     PostList,
   },
-  data() {
+  async asyncData(context) {
+    console.log(context);
+    await new Promise((resolve, reject) => setTimeout(() => resolve(), 1000));
     return {
       loadedPosts: [
         {
@@ -24,9 +26,35 @@ export default {
           title: "第一篇文章",
           previewText: "這條路真的不好走....",
         },
+        {
+          id: "2",
+          thumbnail:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTwQyAEDXUKgJ9JCNhfuCXnQbopPANbquVcPw&usqp=CAU",
+          title: "第二篇文章",
+          previewText: "這條路真的不好走....",
+        },
+        {
+          id: "3",
+          thumbnail:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTwQyAEDXUKgJ9JCNhfuCXnQbopPANbquVcPw&usqp=CAU",
+          title: "第三篇文章",
+          previewText: "這條路真的不好走....",
+        },
+        {
+          id: "4",
+          thumbnail:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTwQyAEDXUKgJ9JCNhfuCXnQbopPANbquVcPw&usqp=CAU",
+          title: "第四篇文章",
+          previewText: "這條路真的不好走....",
+        },
       ],
     };
   },
+  /*data() {
+    return {
+      loadedPosts: [],
+    };
+  },*/
 };
 </script>
 
@@ -61,3 +89,4 @@ export default {
     font-size: 2rem;
   }
 }
+</style>
