@@ -3,62 +3,68 @@
     <section class="intro">
       <h1>工程師之路</h1>
     </section>
+    <Swiper />
     <PostList :posts="loadedPosts" />
   </div>
 </template>
 
 <script>
 import PostList from "../components/Posts/PostList";
+import Swiper from "../components/Swiper/Swiper";
 
 export default {
   components: {
     PostList,
+    Swiper,
   },
   async asyncData(context) {
-    console.log(context);
-    await new Promise((resolve, reject) => setTimeout(() => resolve(), 1000));
-    return {
-      loadedPosts: [
-        {
-          id: "1",
-          thumbnail:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTwQyAEDXUKgJ9JCNhfuCXnQbopPANbquVcPw&usqp=CAU",
-          title: "第一篇文章",
-          previewText: "這條路真的不好走....",
-        },
-        {
-          id: "2",
-          thumbnail:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTwQyAEDXUKgJ9JCNhfuCXnQbopPANbquVcPw&usqp=CAU",
-          title: "第二篇文章",
-          previewText: "這條路真的不好走....",
-        },
-        {
-          id: "3",
-          thumbnail:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTwQyAEDXUKgJ9JCNhfuCXnQbopPANbquVcPw&usqp=CAU",
-          title: "第三篇文章",
-          previewText: "這條路真的不好走....",
-        },
-        {
-          id: "4",
-          thumbnail:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTwQyAEDXUKgJ9JCNhfuCXnQbopPANbquVcPw&usqp=CAU",
-          title: "第四篇文章",
-          previewText: "這條路真的不好走....",
-        },
-      ],
-    };
+    return await new Promise((resolve, reject) =>
+      setTimeout(
+        () =>
+          resolve({
+            loadedPosts: [
+              {
+                id: "1",
+                thumbnail:
+                  "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTwQyAEDXUKgJ9JCNhfuCXnQbopPANbquVcPw&usqp=CAU",
+                title: "第一篇文章",
+                previewText: "這條路真的不好走....",
+              },
+              {
+                id: "2",
+                thumbnail:
+                  "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTwQyAEDXUKgJ9JCNhfuCXnQbopPANbquVcPw&usqp=CAU",
+                title: "第二篇文章",
+                previewText: "這條路真的不好走....",
+              },
+              {
+                id: "3",
+                thumbnail:
+                  "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTwQyAEDXUKgJ9JCNhfuCXnQbopPANbquVcPw&usqp=CAU",
+                title: "第三篇文章",
+                previewText: "這條路真的不好走....",
+              },
+              {
+                id: "4",
+                thumbnail:
+                  "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTwQyAEDXUKgJ9JCNhfuCXnQbopPANbquVcPw&usqp=CAU",
+                title: "第四篇文章",
+                previewText: "這條路真的不好走....",
+              },
+            ],
+          }),
+        1000
+      )
+    );
   },
-  /*data() {
-    return {
-      loadedPosts: [],
-    };
-  },*/
 };
 </script>
 
 <style scoped>
+.home-page {
+  height: 100px;
+  width: 100%;
+}
 .intro {
   height: 300px;
   position: relative;

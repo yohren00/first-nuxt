@@ -20,17 +20,22 @@
 <script>
 export default {
   async asyncData(context) {
-    console.log("posts_id", context);
-    await new Promise((resolve, reject) => setTimeout(() => resolve(), 1000));
-    return {
-      loadedPost: {
-        id: "1",
-        title: "第一篇文章(ID:" + context.route.params.id + ")",
-        date: new Date(),
-        content: "不是很懂context用法，這邊是連接context，之後需要再了解。",
-        author: "Len",
-      },
-    };
+    return await new Promise((resolve, reject) =>
+      setTimeout(
+        () =>
+          resolve({
+            loadedPost: {
+              id: "1",
+              title: "第一篇文章(ID:" + context.route.params.id + ")",
+              date: new Date(),
+              content:
+                "不是很懂context用法，這邊是連接context，之後需要再了解。",
+              author: "Len",
+            },
+          }),
+        1000
+      )
+    );
   },
 };
 </script>
