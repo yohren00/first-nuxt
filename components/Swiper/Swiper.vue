@@ -19,7 +19,7 @@ import "swiper/swiper-bundle.css";
 export default {
   data() {
     return {
-      slide: ["Slide 1", "Slide 2", "Slide 3"],
+      slide: ["React", "Vue", "Angular"],
     };
   },
   mounted() {

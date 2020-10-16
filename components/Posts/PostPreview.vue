@@ -11,7 +11,9 @@
 </template>
 
 <script>
+
 export default {
+
   name: "PostPreview",
   props: {
     id: {
